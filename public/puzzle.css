@@ -51,6 +51,7 @@
     left: 4%;
     top: 50%;
     transform: translateY(-50%);
+    width: 85%;
     border-radius: 10px;
   }
 
@@ -161,6 +162,10 @@
 
 /* 화면 세로 폭이 가로 폭보다 길 때 */
 @media screen and (orientation: portrait) {
+  h1.title{
+    font-size: 4vh;
+    text-align: center;
+  }
   /* h2 태그의 폰트 크기와 가운데 정렬 */
   h2.title {
     font-size: 3vh;
@@ -192,6 +197,6 @@
   }
 }
 
-#btn{width:400px; height:50px; background-color:rgb(204, 232, 255); cursor:pointer; text-align:center; line-height:50px;}
+#btn{width: 100%; height:80%; background-color:rgb(204, 232, 255); cursor:pointer; text-align:center; line-height:50px;}
 
-#slideTogglebox{width:400px; height:100px; background-color:rgb(182, 222, 255); display:none; }
+#slideTogglebox{width: 100%; height:80%; background-color:rgb(182, 222, 255); display:none; }
