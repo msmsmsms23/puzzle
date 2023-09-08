@@ -6,20 +6,25 @@ var clicks = 0;
 
 function randomize() {
   let root = document.documentElement;
-  let randomImg = img[old];
-  root.style.setProperty('--image','url('+randomImg+')');
-  old++;
-  if (old >= img.length) {
-    old = 0;
+  let randomIndex = Math.floor(Math.random() * img.length); // 랜덤한 인덱스 선택
+  let randomImg = img[randomIndex];
+
+  // 이미지 로딩 후 설정
+  const tempImg = new Image();
+  tempImg.onload = function () {
+    root.style.setProperty('--image', 'url(' + randomImg + ')');
+    old = randomIndex;
+    const $complete = document.getElementById("complete");
+    $complete.setAttribute("src", randomImg);
   };
-  const $complete = document.getElementById("complete");
-  $complete.setAttribute("src", randomImg);
+  tempImg.src = randomImg;
+
   var ul = document.querySelectorAll('#puzz i');
-  for (var i = 0; i < ul.length; i++){
+  for (var i = 0; i < ul.length; i++) {
     ul[i].style.left = Math.random() * (window.innerWidth - 100) + 'px';
     ul[i].style.top = Math.random() * (window.innerHeight - 100) + 'px';
-  };
-};
+  }
+}
 
 randomize();
 
@@ -35,7 +40,7 @@ function reload() {
   var allDone = document.querySelector('.allDone');
   allDone.style = '';
   allDone.classList.toggle('allDone');
-}
+};
 
 // mobile functionality
 var p = document.querySelectorAll('#puzz i');
@@ -76,20 +81,20 @@ fp.forEach(function(el){
             reload();
             randomize();       
           }, 1500);
-        }
-      }
-    }    
-  })
+        };
+      };
+    };
+  });
 });
 
 // desktop drag and drop
 function allowDrop(ev) {
   ev.preventDefault();
-}
+};
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.className);  
-}
+};
 
 function drop(ev) {
   ev.preventDefault();
@@ -108,9 +113,9 @@ function drop(ev) {
         reload();
         randomize();       
       }, 1500);
-    }    
-  }  
-}
+    };
+  };
+};
 
 function popup(){
 
@@ -125,4 +130,4 @@ function popup(){
   var top = (screenHeight - popupHeight) / 2;
  
   window.open("pop.html", "popup", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + left + ", top=" + top);
-}
+};

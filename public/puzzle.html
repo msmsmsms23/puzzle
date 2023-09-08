@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./puzzle.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>사진 퍼즐 게임</title>
 </head>
 <body>
-  <!-- 여기 onClick하면 팝업 뜨게하고 거기엔 퍼즐 방법? 간단하게랑 야채부락리 소개같은거 간단하게 넣고싶어 css도 바꿔주면 참 좋을듯 -->
-  <button onclick="popup()">퍼즐 설명</button> 
+  <!-- <button onclick = "popup()" id = "hi">안녕하세요 야채부락리입니다</button>  -->
+  <div id="btn">퍼즐 설명 보기
+    <div id="slideTogglebox">곳곳에 퍼져 있는 그림들을 손으로 잡아서 틀 안에 알맞은 위치에 넣어 주세요!</div>
+  </div>
+  <script>
+  $(document).ready(function(){
+    $('#btn').click(function(){
+      $('#slideTogglebox').slideToggle();
+    });
+  });
+</script>
   <h1 class="title">🧩<span id="title_color">광덕 1리</span> 사진 퍼즐🧩</h1>
   <h2 class="title">왼쪽에 보이는 사진처럼 퍼즐을 완성해보세요 !</h2>
     <img id = 'complete' src = './img/1.jpg' width = "23%">

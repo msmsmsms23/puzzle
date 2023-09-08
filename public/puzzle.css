@@ -191,3 +191,7 @@
     top: 10vh; /* 글자와의 간격을 설정하여 가운데 정렬 */
   }
 }
+
+#btn{width:400px; height:50px; background-color:rgb(204, 232, 255); cursor:pointer; text-align:center; line-height:50px;}
+
+#slideTogglebox{width:400px; height:100px; background-color:rgb(182, 222, 255); display:none; }
