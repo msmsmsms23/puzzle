@@ -20,10 +20,10 @@ function randomize() {
   tempImg.src = randomImg;
 
   var ul = document.querySelectorAll('#puzz i');
-  var x1 = 1200;  // 특정 구역의 시작 x 좌표
-  var x2 = 1500;  // 특정 구역의 끝 x 좌표
-  var y1 = 300;  // 특정 구역의 시작 y 좌표
-  var y2 = 800;  // 특정 구역의 끝 y 좌표
+  var x1 = 500;  // 특정 구역의 시작 x 좌표
+  var x2 = 900;  // 특정 구역의 끝 x 좌표
+  var y1 = 100;  // 특정 구역의 시작 y 좌표
+  var y2 = 400;  // 특정 구역의 끝 y 좌표
   
   for (var i = 0; i < ul.length; i++) {
     var randomLeft = Math.random() * (x2 - x1) + x1 + 'px';
