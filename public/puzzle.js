@@ -1,15 +1,15 @@
 var img = ['./img/1.jpg', './img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg',
           './img/6.jpg', './img/7.jpg', './img/8.jpg', './img/9.jpg', './img/10.jpg',
-          './img/11.jpg', './img/12.jpg', './img/13.jpg', './img/14.jpg', './img/15.jpg']; // 모든 이미지 경로를 추가합니다.
+          './img/11.jpg', './img/12.jpg', './img/13.jpg', './img/14.jpg', './img/15.jpg'];
 var old = 0;
 var clicks = 0;
+var puzBox = document.getElementById("puz_box");
 
 function randomize() {
   let root = document.documentElement;
-  let randomIndex = Math.floor(Math.random() * img.length); // 랜덤한 인덱스 선택
+  let randomIndex = Math.floor(Math.random() * img.length);
   let randomImg = img[randomIndex];
 
-  // 이미지 로딩 후 설정
   const tempImg = new Image();
   tempImg.onload = function () {
     root.style.setProperty('--image', 'url(' + randomImg + ')');
@@ -20,12 +20,19 @@ function randomize() {
   tempImg.src = randomImg;
 
   var ul = document.querySelectorAll('#puzz i');
+  var x1 = 1200;  // 특정 구역의 시작 x 좌표
+  var x2 = 1500;  // 특정 구역의 끝 x 좌표
+  var y1 = 300;  // 특정 구역의 시작 y 좌표
+  var y2 = 800;  // 특정 구역의 끝 y 좌표
+  
   for (var i = 0; i < ul.length; i++) {
-    ul[i].style.left = Math.random() * (window.innerWidth - 100) + 'px';
-    ul[i].style.top = Math.random() * (window.innerHeight - 100) + 'px';
+    var randomLeft = Math.random() * (x2 - x1) + x1 + 'px';
+    var randomTop = Math.random() * (y2 - y1) + y1 + 'px';
+    
+    ul[i].style.left = randomLeft;
+    ul[i].style.top = randomTop;
   }
 }
-
 randomize();
 
 function reload() {
@@ -115,19 +122,4 @@ function drop(ev) {
       }, 1500);
     };
   };
-};
-
-function popup(){
-
-  var screenWidth = window.screen.width;
-  var screenHeight = window.screen.height;
-
-  var popupWidth = 500;
-  var popupHeight = 500;
-
-
-  var left = (screenWidth - popupWidth) / 2;
-  var top = (screenHeight - popupHeight) / 2;
- 
-  window.open("pop.html", "popup", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + left + ", top=" + top);
 };
