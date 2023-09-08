@@ -23,7 +23,7 @@ function randomize() {
   var x1 = 0;  // 특정 구역의 시작 x 좌표
   var x2 = 300;  // 특정 구역의 끝 x 좌표
   var y1 = 30;  // 특정 구역의 시작 y 좌표
-  var y2 = 300;  // 특정 구역의 끝 y 좌표
+  var y2 = 250;  // 특정 구역의 끝 y 좌표
   
   for (var i = 0; i < ul.length; i++) {
     var randomLeft = Math.random() * (x2 - x1) + x1 + 'px';
