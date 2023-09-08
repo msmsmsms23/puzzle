@@ -7,7 +7,11 @@
     <title>사진 퍼즐 게임</title>
 </head>
 <body>
-    <img id = 'complete' src = './img/1.jpg' width = "30%"> // 완성된 이미지
+  <!-- 여기 onClick하면 팝업 뜨게하고 거기엔 퍼즐 방법? 간단하게랑 야채부락리 소개같은거 간단하게 넣고싶어 css도 바꿔주면 참 좋을듯 -->
+  <button onclick="popup()">퍼즐 설명</button> 
+  <h1 class="title">🧩<span id="title_color">광덕 1리</span> 사진 퍼즐🧩</h1>
+  <h2 class="title">왼쪽에 보이는 사진처럼 퍼즐을 완성해보세요 !</h2>
+    <img id = 'complete' src = './img/1.jpg' width = "23%">
     <div id='puz_box'>
       <div id='puz'>
         <i class='first' ondrop='drop(event)' ondragover='allowDrop(event)'></i>

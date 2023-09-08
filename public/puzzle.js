@@ -1,16 +1,19 @@
-var img = ['./img/1.jpg', './img/2.jpg']; // 모든 이미지 경로를 추가합니다.
+var img = ['./img/1.jpg', './img/2.jpg','./img/3.jpg','./img/4.jpg','./img/5.jpg',
+          './img/6.jpg', './img/7.jpg', './img/8.jpg', './img/9.jpg', './img/10.jpg',
+          './img/11.jpg', './img/12.jpg', './img/13.jpg', './img/14.jpg', './img/15.jpg']; // 모든 이미지 경로를 추가합니다.
 var old = 0;
 var clicks = 0;
 
 function randomize() {
   let root = document.documentElement;
-  root.style.setProperty('--image','url('+img[old]+')');
+  let randomImg = img[old];
+  root.style.setProperty('--image','url('+randomImg+')');
   old++;
   if (old >= img.length) {
     old = 0;
   };
   const $complete = document.getElementById("complete");
-  $complete.setAttribute("src", img[old]);
+  $complete.setAttribute("src", randomImg);
   var ul = document.querySelectorAll('#puzz i');
   for (var i = 0; i < ul.length; i++){
     ul[i].style.left = Math.random() * (window.innerWidth - 100) + 'px';
@@ -107,4 +110,19 @@ function drop(ev) {
       }, 1500);
     }    
   }  
+}
+
+function popup(){
+
+  var screenWidth = window.screen.width;
+  var screenHeight = window.screen.height;
+
+  var popupWidth = 500;
+  var popupHeight = 500;
+
+
+  var left = (screenWidth - popupWidth) / 2;
+  var top = (screenHeight - popupHeight) / 2;
+ 
+  window.open("pop.html", "popup", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + left + ", top=" + top);
 }

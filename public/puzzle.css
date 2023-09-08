@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: yg-jalnan;
+}
+
 :root {
     --color: lightgray;
     --border-radius: 10px;
@@ -12,6 +23,37 @@
     box-sizing:border-box;
   }
   
+  button {
+    border-radius: 5px;
+    border: 0;
+    font-size: 20px;
+  }
+
+  .title {
+    text-align: center;
+    color: rgb(49, 49, 49);
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  #title_color {
+    color: rgb(31, 144, 215);
+  }
+  
+  #complete {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+  }
+
   #puz, #puzz {
     position:absolute;
     border-radius:var(--border-radius) 0 var(--border-radius) 0;    
@@ -116,3 +158,36 @@
     bottom:5px;
     right:5px;
   }
+
+/* 화면 세로 폭이 가로 폭보다 길 때 */
+@media screen and (orientation: portrait) {
+  /* h2 태그의 폰트 크기와 가운데 정렬 */
+  h2.title {
+    font-size: 3vh;
+    text-align: center;
+  }
+
+  /* #complete를 가운데 정렬 */
+  #complete {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5vh; /* 글자와의 간격을 설정하여 가운데 정렬 */
+  }
+
+  /* #puz를 원하는 위치로 이동 */
+  #puz {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10vh; /* 글자와의 간격을 설정하여 가운데 정렬 */
+  }
+
+  /* #puzz를 원하는 위치로 이동 */
+  #puzz {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10vh; /* 글자와의 간격을 설정하여 가운데 정렬 */
+  }
+}
